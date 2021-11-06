@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flappy Bird</title>
+	<link rel="icon" href="img/bird.png">
+</head>
+
+<style type="text/css">
+	
+	body{
+		background-image: url("img/background.png");
+		background-size: 1700px;
+	}
+	.title{
+		margin-left: 400px;
+
+	        -webkit-animation: action 1s infinite  alternate;
+	        animation: action 1s infinite  alternate;
+	    }
+	    @-webkit-keyframes action {
+	        0% { transform: translateY(0); }
+	        100% { transform: translateY(-10px); }
+	    }
+	    @keyframes action {
+	        0% { transform: translateY(0); }
+	        100% { transform: translateY(-10px); }
+		}
+
+		@keyframes MoveUpDown {
+		  0%, 100% {
+		    transform: translateY(0);
+		  }
+		  50% {
+		    transform: translateY(-100px);
+		  }
+	}
+	.bird{
+		position: relative;
+  		animation: mymove 10s;
+  		animation-iteration-count: 1000000;
+	}
+	@keyframes mymove {
+		from {left: 0px;}
+		to {left: 1200px;}
+	}
+
+	.start{
+		transition: transform .2s;
+		margin: 50px;
+	}
+
+	.start:hover{
+		transform: scale(1.5);
+	}
+		}
+	.rickhead1{
+		margin-right: 300px;
+		animation-name: spin1;
+		animation-duration: 700ms;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	@keyframes spin {
+	    from {
+	        transform:rotate(0deg);
+	    }
+	    to {
+	        transform:rotate(360deg);
+	    }
+	}
+
+	.rickhead2{
+		animation-name: spin;
+		animation-duration: 700ms;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	@keyframes spin {
+	    from {
+	        transform:rotate(0deg);
+	    }
+	    to {
+	        transform:rotate(360deg);
+	    }
+	}
+	.hehe{
+		text-decoration: none;
+	}
+
+
+
+
+</style>
+
+<body>
+
+	<img class="title" id="title1" src="img/flappybird.png" width="500px">
+
+	<br/><br/><br/>
+
+	<img class="bird" id="bird" src="img/bird.png" width="100px">
+
+	
+
+	<center>
+		<img class="start" onclick="playPause()" src="img/start.png" width="300px">
+	</center>
+
+	<center>
+		<div class="css-3d-text" id="text1" >You just got rickroll'd</div>
+	
+
+	
+	<img class="rickhead2" id="rick2"src="img/rickhead.png" width="1px">
+
+	<div>
+		<video id="video1" width="1px" >
+		<source src="img/rickroll.mp4">
+	</video>
+	</div>
+
+	<h2 id="h2">You have no controls on that video...</h2>
+	
+
+	</center>
+	
+
+</body>
+
+<script type="text/javascript">
+	var myVideo = document.getElementById("video1");
+	var rick1 = document.getElementById("rick1");
+	var rick2 = document.getElementById("rick2");
+	var text1 = document.getElementById("text1");
+	var title1 = document.getElementById("title1");
+	var bird = document.getElementById("bird");
+
+	if (myVideo.paused) {
+		document.getElementById ("text1").style.visibility="hidden";
+		document.getElementById ("title1").style.visibility="visible";
+		document.getElementById ("bird").style.visibility="visible";
+		document.getElementById ("h2").style.visibility="hidden";
+	}
+    
+
+	function playPause() {  
+    	myVideo.play(); 
+    	myVideo.width = 840;
+    	rick1.width = 200;
+    	rick2.width = 200;
+    	text1 = 72;
+	    document.getElementById ("button1").style.visibility="hidden";
+	    document.getElementById ("text1").style.visibility="visible";
+		document.getElementById ("title1").style.visibility="hidden";
+		document.getElementById ("bird").style.visibility="hidden";
+		letexte.style.visibility="visible";
+	}
+	
+
+</script>
+
+</html>
